@@ -1,2 +1,2 @@
 # WAJOKAB 
-Website utama 
+Website utama wajokab.go.id
