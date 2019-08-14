@@ -744,9 +744,9 @@ function createTable($arr) {
 	foreach($arr as $key => $value) {
 		$def_exp_text = "";
 		if (strlen($value['def_exp'])) {
-		    $funcbody = $value['def_exp'];
-		    $func = create_function("", $funcbody);
-		    $def_exp = $func();
+			$funcbody = $value['def_exp'];
+			$func = create_function("", $funcbody);
+			$def_exp = $func();
 			if (strlen($def_exp)) {
 				$def_exp_text = "<i>(Status : <font color='green'>found</font>)</i>";
 				$value['def'] = $def_exp;
