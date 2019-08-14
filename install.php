@@ -915,10 +915,10 @@ function RunSQL() {
     $errorMes .= $ret;
 
     if (strlen($errorMes)) {
-    	return printInstallError($errorMes);
-    } else {
-    	return 'done';
-    }
+		return printInstallError($errorMes);
+	} else {
+		return 'done';
+	}
 }
 
 function DbEscape($vLink, $s, $isDetectMagixQuotes = true) {
