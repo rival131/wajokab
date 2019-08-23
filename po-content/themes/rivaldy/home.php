@@ -801,16 +801,15 @@
 			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
 				<div class="swiper-container pagination-bottom" data-show-items="2" data-effect="coverflow" data-centered-slider="true" data-nospace="true" data-stretch="80" data-depth="250">
 					<div class="swiper-wrapper">
-											<?php
-	$gallerys = $this->gallery()->getGallery('12', 'id_gallery DESC', $album, $this->e($page));
-	foreach($gallerys as $gal){
-?>	
-												<div class="swiper-slide">
-							<img src="https<?=BASE_URL;?>/<?=DIR_CON;?>/uploads/<?=$gal['picture'];?>" alt="">
+					<?php
+					$fotos = $this->pocore()->call->podb->from('gallery')->orderBy('id_album DESC')->limit('12')->fetchAll();
+            foreach($fotos as $foto) {
+				?>
+						<div class="swiper-slide">
+							<img src="<?=BASE_URL;?>/<?=DIR_CON;?>/uploads/<?=$foto['picture'];?>" alt="">
 						</div>
-											<?php } ?>
-										
-											</div>
+			<? } ?>						
+					</div>
 					<div class="swiper-pagination"></div>
 				</div>
 			</div>
@@ -824,12 +823,13 @@
 				<svg class="utouch-icon utouch-icon-arrow-right1"><use xlink:href="#utouch-icon-arrow-right1"></use></svg>
 			</div>
 
-			<a href="https://samarindakota.go.id/website/galeri" class="btn btn--green btn--with-shadow btn-persegi" style="margin-top: 30px">
+			<a href="<?BASE_URL;?>" class="btn btn--green btn--with-shadow btn-persegi" style="margin-top: 30px">
 				Selengkapnya
 			</a>
 		</div>
 	</div>
 </section>
+
     <div class="row">
         <div class="work-full-width">
             <div id="instafeed-gallery-feed" class="gallery row no-gutter">

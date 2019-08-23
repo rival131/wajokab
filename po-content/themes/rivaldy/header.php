@@ -10,7 +10,7 @@
 					</div>
 					<div class="nav-weather"> 
 						<span id="icon-cuaca"></span>
-						<span class="location" id="kota">SAMARINDA</span> 
+						<span class="location" id="kota">Kabupaten Wajo</span> 
 						<span class="degree">
 							<span id="weather"></span>
 						</span> 
@@ -43,7 +43,7 @@
 							</div>
 							<div class="contact-item">
 								<svg class="utouch-icon utouch-icon-telephone-keypad-with-ten-keys"><use xlink:href="#utouch-icon-telephone-keypad-with-ten-keys"></use></svg>
-								<a href="https://samarindakota.go.id/website/kontak-kami">KONTAK KAMI</a>
+								<a href="<?=BASE_URL;?>/kontak-kami">KONTAK KAMI</a>
 							</div>
 						</div>
 
@@ -72,18 +72,18 @@
 						</a>
 						<ul class="primary-menu-menu">
 							<li class="active">
-								<a href="https://samarindakota.go.id/website">Beranda</a>
+								<a href="<?=BASE_URL;?>">Beranda</a>
 							</li>
 							<li class="">
 								<a href="#">Selayang Pandang</a>
 								<ul class="sub-menu">
 																														<li>
-												<a href="https://samarindakota.go.id/website/laman/sejarah-samarinda">
-													Sejarah Samarinda
+												<a href="<?=BASE_URL;?>/detailpost/sejarah-kabupaten-wajo">
+													Sejarah Kabupaten Wajo
 												</a>
 											</li>
 																																								<li>
-												<a href="https://samarindakota.go.id/website/laman/visi-dan-misi">
+												<a href="<?=BASE_URL;?>/pages/visi-dan-misi">
 													Visi dan Misi
 												</a>
 											</li>
@@ -93,34 +93,34 @@
 												</a>
 												<ul class="sub-menu">
 																										<li>
-														<a href="https://samarindakota.go.id/website/laman/kondisi-geografis">
+														<a href="<?=BASE_URL;?>/pages/kondisi-geografis">
 															Kondisi Geografis
 														</a>
 													</li>
 																										<li>
-														<a href="https://samarindakota.go.id/website/laman/kondisi-demografi">
+														<a href="<?=BASE_URL;?>/pages/kondisi-demografi">
 															Kondisi Demografi
 														</a>
 													</li>
 																										<li>
-														<a href="https://samarindakota.go.id/website/laman/kesejahteraan-masyarakat">
+														<a href="<?=BASE_URL;?>/laman/kesejahteraan-masyarakat">
 															Kesejahteraan Masyarakat
 														</a>
 													</li>
 																										<li>
-														<a href="https://samarindakota.go.id/website/laman/pembagian-wilayah">
+														<a href="<?=BASE_URL;?>/laman/pembagian-wilayah">
 															Pembagian Wilayah
 														</a>
 													</li>
 																									</ul>
 											</li>
 																																								<li>
-												<a href="https://samarindakota.go.id/website/laman/makna-lambang">
+												<a href="<?=BASE_URL;?>/pages/makna-lambang">
 													Makna Lambang
 												</a>
 											</li>
 																																								<li>
-												<a href="https://samarindakota.go.id/website/laman/landasan-hukum">
+												<a href="<?=BASE_URL;?>/laman/landasan-hukum">
 													Landasan Hukum
 												</a>
 											</li>
@@ -130,7 +130,7 @@
 							<li class="menu-item-has-mega-menu menu-item-has-children">
 								<a href="#">Pemerintahan</a>
 
-								<div class="megamenu" style="background-image: url(https://samarindakota.go.id/assets/portal/img/menu-pemerintah.png);">
+								<div class="megamenu" style="background-image: url(<?=BASE_URL;?>/assets/portal/img/menu-pemerintah.png);">
 									<div class="megamenu-row">
 
 										<div class="col4">
@@ -140,27 +140,27 @@
 													<p class="megamenu-item-info-text">Informasi Eksekutif Pemerintah</p>
 												</li>
 																								<li>
-													<a href="https://samarindakota.go.id/website/laman/walikota">
-														Profil Walikota
+													<a href="<?=BASE_URL;?>/pages/profil-bupati-wajo">
+														Profil Bupati
 													</a>
 												</li>
 																								<li>
-													<a href="https://samarindakota.go.id/website/laman/wakil-walikota">
-														Profil Wakil Walikota
+													<a href="<?=BASE_URL;?>/pages/wakil-bupati">
+														Profil Wakil Bupati
 													</a>
 												</li>
 																								<li>
-													<a href="https://samarindakota.go.id/website/laman/sekretaris-daerah">
+													<a href="<?=BASE_URL;?>/pages/sekretaris-daerah">
 														Profil Sekretaris Daerah
 													</a>
 												</li>
 																								<li>
-													<a href="https://samarindakota.go.id/website/laman/pejabat-struktural">
+													<a href="<?=BASE_URL;?>/laman/pejabat-struktural">
 														Pejabat Struktural
 													</a>
 												</li>
 																								<li>
-													<a href="https://samarindakota.go.id/website/laman/lhkpn">
+													<a href="<?=BASE_URL;?>/laman/lhkpn">
 														LHKPN
 													</a>
 												</li>
@@ -173,22 +173,22 @@
 													<p class="megamenu-item-info-text">Informasi Perangkat Daerah</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/pemerintahan/kesekretariatan">Kesekretariatan</a>
+													<a href="<?=BASE_URL;?>/pemerintahan/kesekretariatan">Kesekretariatan</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/pemerintahan/badan-daerah">Badan Daerah</a>
+													<a href="<?=BASE_URL;?>/pemerintahan/badan-daerah">Badan Daerah</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/pemerintahan/dinas">Dinas</a>
+													<a href="<?=BASE_URL;?>/pemerintahan/dinas">Dinas</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/pemerintahan/kecamatan">Kecamatan</a>
+													<a href="<?=BASE_URL;?>/pemerintahan/kecamatan">Kecamatan</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/pemerintahan/kelurahan">Kelurahan</a>
+													<a href="<?=BASE_URL;?>/pemerintahan/kelurahan">Kelurahan</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/pemerintahan/bumd">BUMD</a>
+													<a href="<?=BASE_URL;?>/pemerintahan/bumd">BUMD</a>
 												</li>
 											</ul>
 										</div>
@@ -201,19 +201,19 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/perencanaan/rpjpd">RPJPD</a>
+													<a href="<?=BASE_URL;?>/perencanaan/rpjpd">RPJPD</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/perencanaan/rpjmd">RPJMD</a>
+													<a href="<?=BASE_URL;?>/perencanaan/rpjmd">RPJMD</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/perencanaan/renstra">Rencana Strategis</a>
+													<a href="<?=BASE_URL;?>/perencanaan/renstra">Rencana Strategis</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/perencanaan/musrenbang">Musrenbang</a>
+													<a href="<?=BASE_URL;?>/perencanaan/musrenbang">Musrenbang</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/perencanaan/rkpd">RKPD</a>
+													<a href="<?=BASE_URL;?>/perencanaan/rkpd">RKPD</a>
 												</li>
 											</ul>
 										</div>
@@ -230,7 +230,7 @@
 							<li class="menu-item-has-mega-menu menu-item-has-children">
 								<a href="#">Sarana & Prasarana</a>
 
-								<div class="megamenu" style="background-image: url(https://samarindakota.go.id/assets/portal/img/menu-sarana.png);">
+								<div class="megamenu" style="background-image: url(<?=BASE_URL;?>/assets/portal/img/menu-sarana.png);">
 									<div class="megamenu-row">
 
 										<div class="col4">
@@ -242,13 +242,13 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/kesehatan?pages=rumah-sakit">Rumah Sakit</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/kesehatan?pages=rumah-sakit">Rumah Sakit</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/kesehatan?pages=puskesmas">Puskesmas</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/kesehatan?pages=puskesmas">Puskesmas</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/kesehatan?pages=apotik">Apotik</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/kesehatan?pages=apotik">Apotik</a>
 												</li>
 											</ul>
 											<br/>
@@ -260,13 +260,13 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/akomodasi?pages=hotel-kostel">Hotel & Kostel</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/akomodasi?pages=hotel-kostel">Hotel & Kostel</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/akomodasi?pages=kost">Kost</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/akomodasi?pages=kost">Kost</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/akomodasi?pages=apartment">Apartement</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/akomodasi?pages=apartment">Apartement</a>
 												</li>
 											</ul>
 										</div>
@@ -279,22 +279,22 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/pendidikan?pages=tk-paud">TK / PAUD</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=tk-paud">TK / PAUD</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/pendidikan?pages=sd">SD</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=sd">SD</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/pendidikan?pages=smp">SMP</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=smp">SMP</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/pendidikan?pages=sma-smk">SMA / SMK</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=sma-smk">SMA / SMK</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/pendidikan?pages=perguruan-tinggi">Perguruan Tinggi</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=perguruan-tinggi">Perguruan Tinggi</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/pendidikan?pages=balai-kursus">Balai Kursus</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=balai-kursus">Balai Kursus</a>
 												</li>
 											</ul>
 											<br/>
@@ -306,10 +306,10 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/fasilitas?pages=cctv-online">CCTV Online</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/fasilitas?pages=cctv-online">CCTV Online</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/fasilitas?pages=tempat-rekreasi">Tempat Rekreasi</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/fasilitas?pages=tempat-rekreasi">Tempat Rekreasi</a>
 												</li>
 											</ul>
 										</div>
@@ -322,19 +322,19 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/transportasi?pages=angkutan-umum">Angkutan Umum</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/transportasi?pages=angkutan-umum">Angkutan Umum</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/transportasi?pages=terminal">Terminal</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/transportasi?pages=terminal">Terminal</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/transportasi?pages=bandara">Bandara</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/transportasi?pages=bandara">Bandara</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/transportasi?pages=pelabuhan">Pelabuhan</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/transportasi?pages=pelabuhan">Pelabuhan</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/transportasi?pages=shelter">Shelter</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/transportasi?pages=shelter">Shelter</a>
 												</li>
 											</ul>
 											
@@ -350,19 +350,19 @@
 													</p>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/perbelanjaan?pages=mall-plaza">Mall & Plaza</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/perbelanjaan?pages=mall-plaza">Mall & Plaza</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/perbelanjaan?pages=minimarket">Minimarket</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/perbelanjaan?pages=minimarket">Minimarket</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/perbelanjaan?pages=pasar-tradisional">Pasar Tradisional</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/perbelanjaan?pages=pasar-tradisional">Pasar Tradisional</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/perbelanjaan?pages=pasar-malam">Pasar Malam</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/perbelanjaan?pages=pasar-malam">Pasar Malam</a>
 												</li>
 												<li>
-													<a href="https://samarindakota.go.id/website/sarana-prasarana/perbelanjaan?pages=rumah-makan">Resto & Rumah Makan</a>
+													<a href="<?=BASE_URL;?>/sarana-prasarana/perbelanjaan?pages=rumah-makan">Resto & Rumah Makan</a>
 												</li>
 											</ul>
 										</div>
@@ -374,37 +374,37 @@
 								<a href="#">Layanan Publik</a>
 								<ul class="sub-menu">
 									<li>
-										<a href="https://samarindakota.go.id/website/layanan/perizinan">
+										<a href="<?=BASE_URL;?>/layanan/perizinan">
 											Perizinan
 										</a>
 									</li>
 									<li>
-										<a href="https://samarindakota.go.id/website/layanan/kependudukan">
+										<a href="<?=BASE_URL;?>/layanan/kependudukan">
 											Kependudukan
 										</a>
 									</li>
 									<li>
-										<a href="https://samarindakota.go.id/website/layanan/pengaduan-masyarakat">
+										<a href="<?=BASE_URL;?>/layanan/pengaduan-masyarakat">
 											Pengaduan Masyarakat
 										</a>
 									</li>
 									<li>
-										<a href="https://samarindakota.go.id/website/layanan/permohonan-informasi">
+										<a href="<?=BASE_URL;?>/layanan/permohonan-informasi">
 											Permohonan Informasi
 										</a>
 									</li>
 									<li>
-										<a href="https://samarindakota.go.id/website/layanan/bursa-kerja">
+										<a href="<?=BASE_URL;?>/layanan/bursa-kerja">
 											Bursa Kerja
 										</a>
 									</li>
 								</ul>
 							</li>
 							<li class="">
-								<a href="https://samarindakota.go.id/website/samarinda-dalam-angka">Samarinda Dalam Angka</a>
+								<a href="<?=BASE_URL;?>/samarinda-dalam-angka">Samarinda Dalam Angka</a>
 							</li>
 							<li class="">
-								<a href="https://samarindakota.go.id/website/smart-city">Smart City</a>
+								<a href="<?=BASE_URL;?>/smart-city">Smart City</a>
 							</li>
 						</ul>
 					</nav>

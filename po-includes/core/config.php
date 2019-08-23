@@ -10,7 +10,7 @@ define('CONF_VER', $site['ver']);
 define('CONF_BUILD', $site['build']);
 define('CONF_RELEASE', $site['release']);
 
-$site['url'] = "http://demo.wajokab.go.id/web/";
+$site['url'] = "http://localhost/webwajo/";
 $site['adm'] = "po-admin";
 $site['con'] = "po-content";
 $site['inc'] = "po-includes";
@@ -24,9 +24,9 @@ $db['host'] = "localhost";
 $db['driver'] = "mysql";
 $db['sock'] = "";
 $db['port'] = "";
-$db['user'] = "demowajo_rivaldy";
-$db['passwd'] = "Demon131@";
-$db['db'] = "demowajo_dbwebsite";
+$db['user'] = "root";
+$db['passwd'] = "";
+$db['db'] = "dbwajoweb";
 
 define('DATABASE_HOST', $db['host']);
 define('DATABASE_DRIVER', $db['driver']);

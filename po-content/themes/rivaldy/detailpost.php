@@ -82,7 +82,7 @@
 							<time class="published" datetime="2017-03-20 12:00:00">
 								<a href="#" class="number"><?=$this->pocore()->call->podatetime->tgl_indo(substr($post['date'],8,2));?> </a>
 								<span class="month"><?=$this->pocore()->call->podatetime->getBulanShrt(substr($post['date'],5,2));?> <?=$this->pocore()->call->podatetime->tgl_indo(substr($post['date'],0,4));?></span>
-								<span class="day">Monday</span>
+								
 							</time>
 
 						</div>
@@ -94,14 +94,7 @@
 							<div class="post-additional-info">
 								<span class="post__author author vcard">
 									By
-									<a href="#" class="fn">Admin</a>
-								</span>
-								<span class="category">
-									In
-									<a href="16_news.html">News</a>
-								</span>
-								<span class="post__comments">
-									<a href="#">6 <span>Comments</span></a>
+									<a href="#" class="fn">Admin Wajokab</a>
 								</span>
 							</div>
 

@@ -5,8 +5,8 @@
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="widget w-info">
 						<div class="site-logo logo-bawah">
-							<a href="https://samarindakota.go.id/website" class="full-block"></a>
-							<img src="https://samarindakota.go.id/assets/portal/img/logo-portal-putih.png">
+							<a href="<?=BASE_URL;?>" class="full-block"></a>
+							<img src="<?=$this->asset('/images/logo/footer-wajo.png')?>">
 						</div>
 					</div>
 					<div class="widget w-follow">
@@ -42,9 +42,9 @@
 							<span class="info">info@samarindakota.go.id</span>
 						</div>
 
-						<a href="#" class="btn btn--green full-width btn--with-shadow js-message-popup cd-nav-trigger btn-persegi">
+					<!--	<a href="#" class="btn btn--green full-width btn--with-shadow js-message-popup cd-nav-trigger btn-persegi">
 							Kirim Pesan
-						</a>
+						</a>-->
 					</div>
 				</div>
 			</div>
@@ -56,11 +56,8 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<span>
-						Copyright © 2017-2019 Dinas Komunikasi dan Informatika - Pemerintah Kota Samarinda
-					</span>
-					<span>
-						<small><small>Images by <a href="https://freepik.com" target="_blank">Freepik</a> - Supported by <a href="https://enterwind.com" target="_blank">Enterwind</a>.</small></small>
-					</span>
+						Copyright © 2017-2019 Dinas Komunikasi, Informatika dan Statistik Kabupaten Wajo					</span>
+					
 				</div>
 			</div>
 		</div>
