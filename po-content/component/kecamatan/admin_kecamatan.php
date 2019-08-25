@@ -80,7 +80,7 @@ class Kecamatan extends PoCore
 						<?php
 							$columns = array(
 								array('title' => 'Id', 'options' => 'style="width:30px;"'),
-								array('title' => 'Namakecamatan', 'options' => ''),
+								array('title' => 'Nama Kecamatan', 'options' => ''),
 								array('title' => 'Camat', 'options' => ''),
 								array('title' => 'Alamat', 'options' => ''),
 								array('title' => 'Telp', 'options' => ''),

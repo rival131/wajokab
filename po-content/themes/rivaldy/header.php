@@ -130,7 +130,7 @@
 							<li class="menu-item-has-mega-menu menu-item-has-children">
 								<a href="#">Pemerintahan</a>
 
-								<div class="megamenu" style="background-image: url(<?=BASE_URL;?>/assets/portal/img/menu-pemerintah.png);">
+								<div class="megamenu" style="background-image: url(<?=$this->asset('/images/menu-pemerintahan.png')?>;">
 									<div class="megamenu-row">
 
 										<div class="col4">
@@ -197,7 +197,7 @@
 												<li class="megamenu-item-info">
 													<h5 class="megamenu-item-info-title">Dok. Perencanaan</h5>
 													<p class="megamenu-item-info-text">
-														<small>Sumber: BAPPEDA Kota Samarinda</small>
+														<small>Sumber: BAPPEDA Kabupaten Wajo</small>
 													</p>
 												</li>
 												<li>
@@ -230,7 +230,7 @@
 							<li class="menu-item-has-mega-menu menu-item-has-children">
 								<a href="#">Sarana & Prasarana</a>
 
-								<div class="megamenu" style="background-image: url(<?=BASE_URL;?>/assets/portal/img/menu-sarana.png);">
+								<div class="megamenu" style="background-image: url(<?=$this->asset('/images/menu-sarana.png')?>;">
 									<div class="megamenu-row">
 
 										<div class="col4">
@@ -400,9 +400,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="">
-								<a href="<?=BASE_URL;?>/samarinda-dalam-angka">Samarinda Dalam Angka</a>
-							</li>
+							
 							<li class="">
 								<a href="<?=BASE_URL;?>/smart-city">Smart City</a>
 							</li>

@@ -23,7 +23,7 @@
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="open-time">
 						<h5 class="widget-title">Jam Operasional</h5>
-						<p><strong>Hari Kerja:</strong><br>Senin - Kamis: 7.30 s/d 16.00<br> Jum'at: 7.30 s/d 11.00</p>
+						<p><strong>Hari Kerja:</strong><br>Senin - Kamis: 7.30 s/d 16.00<br> Jum'at: 7.30 s/d 16.00</p>
 						<p><strong>Libur:</strong><br> Sabtu, Minggu &amp; Libur Nasional</p>
 					</div>
 				</div>
@@ -35,11 +35,11 @@
 						<h5 class="widget-title">Hotline</h5>
 						<div class="contact-item display-flex">
 							<svg class="utouch-icon icon-bawah utouch-icon-telephone-keypad-with-ten-keys"><use xlink:href="#utouch-icon-telephone-keypad-with-ten-keys"></use></svg>
-							<span class="info">112 - Panggilan Darurat</span>
+							<span class="info">xxx - Panggilan Darurat</span>
 						</div>
 						<div class="contact-item display-flex">
 							<svg class="utouch-icon icon-bawah utouch-icon-message-closed-envelope-1"><use xlink:href="#utouch-icon-message-closed-envelope-1"></use></svg>
-							<span class="info">info@samarindakota.go.id</span>
+							<span class="info">info@wajokab.go.id</span>
 						</div>
 
 					<!--	<a href="#" class="btn btn--green full-width btn--with-shadow js-message-popup cd-nav-trigger btn-persegi">
@@ -56,7 +56,7 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<span>
-						Copyright © 2017-2019 Dinas Komunikasi, Informatika dan Statistik Kabupaten Wajo					</span>
+						Copyright © 2019 Dinas Komunikasi, Informatika dan Statistik Kabupaten Wajo					</span>
 					
 				</div>
 			</div>

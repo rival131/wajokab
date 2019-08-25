@@ -7,14 +7,20 @@
   		<div class="pengumuman-content">
 		    <div class="pengumuman-inner">
             	<div class="pengumuman-kiri">
-					Pengumuman Terkini
+					Pengumuman
 				</div>
 		      	<div class="pengumuman-garing">/</div>
+				  <?php
+	$post_by_categorys = $this->post()->getPostByCategory('6', '1', 'DESC', WEB_LANG_ID);
+	foreach($post_by_categorys as $list_post){
+?>
 			    <div class="pengumuman-tengah">
-  					Pengumuman Seleksi Penerimaan CPNS 2018 di lingkungan Pemerintah Kota Samarinda
+				<?=$list_post['title'];?>
   				</div>
-				<a href="http://bkppd.samarindakota.go.id/new/news/pengumuman-seleksi-penerimaan-cpns-2018-di-lingkungan-pemerintah-kota-samarinda" target="_blank" class="pengumuman-link">Selengkapnya</a>
-    		</div>
+	
+				<a href="<?=BASE_URL;?>/detailpost/<?=$list_post['seotitle'];?>" target="_blank" class="pengumuman-link">Selengkapnya</a>
+				<?php } ?>
+			</div>
   		</div>
 	</div>
 	
@@ -25,14 +31,14 @@
 	</style>
 
 	<div class="crumina-stunning-header stunning-header--content-center stunning-bg-3 stunning-header--bg-photo stunning-header--min600 align-center c-white fill-white"
-			style="background-image: url('https://samarindakota.go.id/storage/portal/wallpaper/2018-06/24/BTHP9TNsPz.jpg');" 
+			style="background-image: url('<?=$this->asset('/images/background/Wisata-Hits-Rumah-Adat-Atakkae-Wajo.jpg')?>');" 
 		>
 		<div class="container">
 			<div class="stunning-header-content">
 				<img src="<?=$this->asset('/images/logo/logo-wajo.png')?>" class="logo-wajo">
 				<h2 class="h1 stunning-header-title c-white">Selamat Datang di <strong>Kabupaten Wajo</strong></h2>
-				<h6 class="stunning-header-sub-title c-white">Kota Teduh, Rapi, Aman dan Nyaman</h6>
-				<form method="POST" action="https://samarindakota.go.id/website" accept-charset="UTF-8" class="form-inline form-pencarian" autocomplete="off"><input name="_token" type="hidden" value="jQHFf0OD75nNlVMARhNDwikhwlumJ87NKnoggtWz">
+				<h6 class="stunning-header-sub-title c-white">PEMERINTAHAN YANG BERSIH DAN RELIGIUS, MENUJU WAJO SEJAHTERA, BERDAYA SAING, DAN TERDEPAN.</h6>
+				<form method="POST" action="<?=BASE_URL;?>" accept-charset="UTF-8" class="form-inline form-pencarian" autocomplete="off"><input name="_token" type="hidden" value="jQHFf0OD75nNlVMARhNDwikhwlumJ87NKnoggtWz">
 					<input placeholder="Masukkan Informasi yang Anda ingin cari" name="keyword" type="text">
 					<button class="btn btn--green-light cari">
 						Temukan
@@ -338,12 +344,10 @@
 						</li>
 
 						<li role="presentation" class="tab-control">
-							<a href="#kecamatan" role="tab" data-toggle="tab" class="control-item">KECAMATAN</a>
+							<a href="#pengumuman" role="tab" data-toggle="tab" class="control-item">PENGUMUMAN</a>
 						</li>
 
-						<li role="presentation" class="tab-control">
-							<a href="#kelurahan" role="tab" data-toggle="tab" class="control-item">KELURAHAN</a>
-						</li>
+						
 
 					</ul>
 					<div class="tab-content">
@@ -386,310 +390,49 @@
 								</div>
 							</div>
 						</div>
-						<div role="tabpanel" class="tab-pane fade" id="kecamatan">
+
+						<!--START PENGUMUMAN-->
+						<div role="tabpanel" class="tab-pane fade" id="pengumuman">
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<div class="curriculum-event-wrap">
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+									<?php
+	$post_by_categorys = $this->post()->getPostByCategory('6', '6', 'DESC', WEB_LANG_ID);
+	foreach($post_by_categorys as $list_post){
+?>
+										<!--ITEM-->
+										<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 											<div class="curriculum-event c-primary" data-mh="curriculum">
 												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/ikm-indeks-kepuasan-masyarakat-kecamatan-samarinda-kota-YVQRU">
-														<img src="https://samarindakota.go.id/upload/news/samarinda-kota/2019-08/09/ikm-indeks-kepuasan-masyarakat-kecamatan-samarinda-kota-YVQRU_m.jpeg" alt="IKM (Indeks Kepuasan Masyarakat) Kecamatan Samarinda Kota">
+													<a href="<?=BASE_URL;?>/detailpost/<?=$list_post['seotitle'];?>">
+														<img src="<?=$this->asset('/images/background/pengumuman.jpg')?>" alt="<?=$list_post['title'];?>">
 													</a>
 													<div class="category-link">
-														<a href="https://kec-samarinda-kota.samarindakota.go.id" target="_blank" class="c-white">
-															Kecamatan Samarinda Kota
+														<a href="<?=BASE_URL;?>/category/pengumuman" target="_blank" class="c-white">
+															Pengumuman
 														</a>
 													</div>
 												</div>
 												<div class="curriculum-event-content">
 													<div class="icon-text-item display-flex">
-														<div class="text">
+													<div class="text">
 															<i class="fa fa-clock-o"></i> 
-															3 Hari Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 7 Kali
+															<?=$this->pocore()->call->podatetime->tgl_indo($list_post['date']);?>
 														</div>
 													</div>
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/ikm-indeks-kepuasan-masyarakat-kecamatan-samarinda-kota-YVQRU" class="h5 title">IKM (Indeks Kepuasan Masyarakat) Kecamatan Samarinda Kota</a>
+													<a href="<?=BASE_URL;?>/detailpost/<?=$list_post['seotitle'];?>" class="h5 title"><?=$list_post['title'];?></a>
 												</div>
 											</div>
 										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/upacara-penutupan-tmmd-ke-105-tahun-2019-CVOTM">
-														<img src="https://samarindakota.go.id/upload/news/palaran/2019-08/08/upacara-penutupan-tmmd-ke-105-tahun-2019-CVOTM_m.jpg" alt="Upacara penutupan TMMD ke 105 tahun 2019">
-													</a>
-													<div class="category-link">
-														<a href="https://kec-palaran.samarindakota.go.id" target="_blank" class="c-white">
-															Kecamatan Palaran
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															4 Hari Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 9 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/upacara-penutupan-tmmd-ke-105-tahun-2019-CVOTM" class="h5 title">Upacara penutupan TMMD ke 105 tahun 2019</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/pemadaman-hutan-belukar-di-wilayah-kelurahan-bantuas-HUPER">
-														<img src="https://samarindakota.go.id/upload/news/palaran/2019-08/04/pemadaman-hutan-belukar-di-wilayah-kelurahan-bantuas-HUPER_m.jpg" alt="Pemadaman hutan belukar di wilayah kelurahan Bantuas">
-													</a>
-													<div class="category-link">
-														<a href="https://kec-palaran.samarindakota.go.id" target="_blank" class="c-white">
-															Kecamatan Palaran
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															1 Minggu Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 9 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/pemadaman-hutan-belukar-di-wilayah-kelurahan-bantuas-HUPER" class="h5 title">Pemadaman hutan belukar di wilayah kelurahan Bantuas</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/silaturahmi-dan-syukuran-kontingen-peda-ktna-kota-samarinda-MPGYR">
-														<img src="https://samarindakota.go.id/upload/news/palaran/2019-08/04/silaturahmi-dan-syukuran-kontingen-peda-ktna-kota-samarinda-MPGYR_m.jpg" alt="Silaturahmi dan syukuran Kontingen PEDA KTNA kota Samarinda">
-													</a>
-													<div class="category-link">
-														<a href="https://kec-palaran.samarindakota.go.id" target="_blank" class="c-white">
-															Kecamatan Palaran
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															1 Minggu Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 5 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/silaturahmi-dan-syukuran-kontingen-peda-ktna-kota-samarinda-MPGYR" class="h5 title">Silaturahmi dan syukuran Kontingen PEDA KTNA kota Samarinda</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/rakor-tahapan-pemilu-kepala-daerah-serentak-tahun-2020-FXPMI">
-														<img src="https://samarindakota.go.id/upload/news/palaran/2019-08/02/rakor-tahapan-pemilu-kepala-daerah-serentak-tahun-2020-FXPMI_m.jpg" alt="Rakor Tahapan pemilu Kepala Daerah Serentak tahun 2020">
-													</a>
-													<div class="category-link">
-														<a href="https://kec-palaran.samarindakota.go.id" target="_blank" class="c-white">
-															Kecamatan Palaran
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															1 Minggu Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 5 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/rakor-tahapan-pemilu-kepala-daerah-serentak-tahun-2020-FXPMI" class="h5 title">Rakor Tahapan pemilu Kepala Daerah Serentak tahun 2020</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/sosialisasi-kajian-resiko-bencana-dan-pendataan-pasca-banjir-ZVQTU">
-														<img src="https://samarindakota.go.id/upload/news/palaran/2019-08/01/sosialisasi-kajian-resiko-bencana-dan-pendataan-pasca-banjir-ZVQTU_m.jpg" alt="Sosialisasi kajian resiko bencana dan pendataan pasca banjir">
-													</a>
-													<div class="category-link">
-														<a href="https://kec-palaran.samarindakota.go.id" target="_blank" class="c-white">
-															Kecamatan Palaran
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															1 Minggu Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 10 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kecamatan/sosialisasi-kajian-resiko-bencana-dan-pendataan-pasca-banjir-ZVQTU" class="h5 title">Sosialisasi kajian resiko bencana dan pendataan pasca banjir</a>
-												</div>
-											</div>
-										</div>
-																			</div>
+											<?php } ?>
+										<!--END ITEM-->
+									</div>
 								</div>
 							</div>
 						</div>
-						<div role="tabpanel" class="tab-pane fade" id="kelurahan">
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="curriculum-event-wrap">
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/lomba-futsal-se-kecamatan-sungai-kunjang-dalam-rangka-memperingati-hari-anak-nasional-2019-JVGEA">
-														<img src="https://samarindakota.go.id/upload/news/karang-asam-ulu/2019-08/11/lomba-futsal-se-kecamatan-sungai-kunjang-dalam-rangka-memperingati-hari-anak-nasional-2019-JVGEA_m.jpg" alt="Lomba Futsal Se-Kecamatan Sungai Kunjang Dalam Rangka Memperingati Hari Anak Nasional 2019">
-													</a>
-													<div class="category-link">
-														<a href="https://kel-karang-asam-ulu.samarindakota.go.id" target="_blank" class="c-white">
-															Kelurahan Karang Asam Ulu
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															15 Jam Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 1 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/lomba-futsal-se-kecamatan-sungai-kunjang-dalam-rangka-memperingati-hari-anak-nasional-2019-JVGEA" class="h5 title">Lomba Futsal Se-Kecamatan Sungai Kunjang Dalam Rangka Memperingati Hari Anak Nasional 2019</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/technical-meeting-lomba-futsal-dalam-rangka-memperingati-hari-anak-nasional-2019-MGHKC">
-														<img src="https://samarindakota.go.id/upload/news/karang-asam-ulu/2019-08/11/technical-meeting-lomba-futsal-dalam-rangka-memperingati-hari-anak-nasional-2019-MGHKC_m.jpg" alt="Technical Meeting Lomba Futsal Dalam Rangka Memperingati Hari Anak Nasional 2019">
-													</a>
-													<div class="category-link">
-														<a href="https://kel-karang-asam-ulu.samarindakota.go.id" target="_blank" class="c-white">
-															Kelurahan Karang Asam Ulu
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															15 Jam Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 1 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/technical-meeting-lomba-futsal-dalam-rangka-memperingati-hari-anak-nasional-2019-MGHKC" class="h5 title">Technical Meeting Lomba Futsal Dalam Rangka Memperingati Hari Anak Nasional 2019</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/pengumpulan-data-dasar-keluarga-di-wilayah-kelurahan-karang-asam-ulu-dkk-XBWIY">
-														<img src="https://samarindakota.go.id/upload/news/karang-asam-ulu/2019-08/11/pengumpulan-data-dasar-keluarga-di-wilayah-kelurahan-karang-asam-ulu-dkk-XBWIY_m.jpg" alt="Pengumpulan Data Dasar Keluarga di Wilayah Kelurahan Karang Asam Ulu (DKK)">
-													</a>
-													<div class="category-link">
-														<a href="https://kel-karang-asam-ulu.samarindakota.go.id" target="_blank" class="c-white">
-															Kelurahan Karang Asam Ulu
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															16 Jam Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 2 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/pengumpulan-data-dasar-keluarga-di-wilayah-kelurahan-karang-asam-ulu-dkk-XBWIY" class="h5 title">Pengumpulan Data Dasar Keluarga di Wilayah Kelurahan Karang Asam Ulu (DKK)</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/tatap-muka-tim-wasev-kepada-masyarakat-di-lokasi-tmmd-jalan-rapak-indah-2-rt-41-LYAZE">
-														<img src="https://samarindakota.go.id/upload/news/karang-asam-ulu/2019-08/11/tatap-muka-tim-wasev-kepada-masyarakat-di-lokasi-tmmd-jalan-rapak-indah-2-rt-41-LYAZE_m.jpg" alt="Tatap Muka Tim WASEV kepada Masyarakat di Lokasi TMMD Jalan Rapak Indah 2 RT. 41">
-													</a>
-													<div class="category-link">
-														<a href="https://kel-karang-asam-ulu.samarindakota.go.id" target="_blank" class="c-white">
-															Kelurahan Karang Asam Ulu
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															16 Jam Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 2 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/tatap-muka-tim-wasev-kepada-masyarakat-di-lokasi-tmmd-jalan-rapak-indah-2-rt-41-LYAZE" class="h5 title">Tatap Muka Tim WASEV kepada Masyarakat di Lokasi TMMD Jalan Rapak Indah 2 RT. 41</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/pelatihan-dasar-perbaikan-handphone-KGEXS">
-														<img src="https://samarindakota.go.id/upload/news/karang-asam-ulu/2019-08/11/pelatihan-dasar-perbaikan-handphone-KGEXS_m.jpg" alt="Pelatihan Dasar Perbaikan Handphone">
-													</a>
-													<div class="category-link">
-														<a href="https://kel-karang-asam-ulu.samarindakota.go.id" target="_blank" class="c-white">
-															Kelurahan Karang Asam Ulu
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															16 Jam Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 2 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/pelatihan-dasar-perbaikan-handphone-KGEXS" class="h5 title">Pelatihan Dasar Perbaikan Handphone</a>
-												</div>
-											</div>
-										</div>
-																				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-											<div class="curriculum-event c-primary" data-mh="curriculum">
-												<div class="curriculum-event-thumb">
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/kerja-bakti-mengecat-sekolah-tk-negeri-2-loa-bakung-YUERK">
-														<img src="https://samarindakota.go.id/upload/news/karang-asam-ulu/2019-08/11/kerja-bakti-mengecat-sekolah-tk-negeri-2-loa-bakung-YUERK_m.jpg" alt="Kerja Bakti Mengecat Sekolah TK Negeri 2 Loa Bakung">
-													</a>
-													<div class="category-link">
-														<a href="https://kel-karang-asam-ulu.samarindakota.go.id" target="_blank" class="c-white">
-															Kelurahan Karang Asam Ulu
-														</a>
-													</div>
-												</div>
-												<div class="curriculum-event-content">
-													<div class="icon-text-item display-flex">
-														<div class="text">
-															<i class="fa fa-clock-o"></i> 
-															16 Jam Yang Lalu															&nbsp;
-															<i class="fa fa-eye"></i> 2 Kali
-														</div>
-													</div>
-													<a href="https://samarindakota.go.id/website/berita/kelurahan/kerja-bakti-mengecat-sekolah-tk-negeri-2-loa-bakung-YUERK" class="h5 title">Kerja Bakti Mengecat Sekolah TK Negeri 2 Loa Bakung</a>
-												</div>
-											</div>
-										</div>
-																			</div>
-								</div>
-							</div>
-						</div>
+						<!--END PENGUMUMAN-->
+
+						
 					</div>
 				</div>
 			</div>
@@ -916,144 +659,68 @@
 		</div>
 	</div>
 </section>
-    <!-- Aplikasi IT -->
-    
+   
+<!-- Case Item -->
 
-	<style type="text/css">
-	#bg-tautan {
-		background: #f8f8f8;
-		padding: 3em 0;
-	}
-	.tautan {
-		position: relative;
-		text-align: center;
-	}
-	.tautan #tautan-kiri, .tautan #right {
-		height: 250px;
-	}
-	.tautan #tautan-kiri {
-		background: #1b1b1b;
-		position: absolute;
-		bottom: 0;
-	}
-	.tautan #tautan-kanan {
-		position: absolute;
-		background: #05a13c;
-	}
-	.tautan #tautan-konten {
-		line-height: 14px;
-		color: #e74c3c;
-		font-family: Lato,Helvetica,sans-serif;
-		font-weight: 700;
-		padding: 2em 0;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.tautan .title {
-		text-align: left;
-	}
-	.tautan hr {
-		background: #25c768;
-		border: none;
-		display: inline-block;
-		width: 50px;
-		height: 4px;
-		left: -1.55em;
-		top: 1.8em;
-		position: absolute;
-	}
-	.tautan .title p {
-		display: inline-block;
-		margin-left: 2em;
-		font-weight: 700;
-		font-size: 18px;
-	}
-	.tautan .title p.eksternal {
-		margin-left: -1.5em;
-	}
-	.tautan a, .tautan img {
-		transition: all .3s ease-in;
-	}
-	.tautan #tautan-konten img.eksternal {
-		margin-left: -50px;
-	}
-	.tautan #tautan-konten img {
-		height: 125px;
-		width: auto;
-		padding: 2px 0em;
-	}
-	@media  screen and (min-width: 48em) {
-		.tautan #tautan-kiri, .tautan #tautan-kanan {
-			height: 200px;
-		}
-	}
-	@media  screen and (min-width: 48em) {
-		.tautan #tautan-kanan {
-			width: 40px;
-			right: -2.5em;
-			top: 1.6em;
-		}
-		.tautan #tautan-kiri {
-			left: -40px;
-			width: 40px;
-			margin-bottom: 20px;
-		}
-	}
-</style>
-
-<section id="bg-tautan"> 
-	<div class="tautan container">
-		<div class="row" style="background: #ffff">
-			<div class="col-lg-9">
-				<div id="tautan-kiri"></div>
-				<div id="tautan-konten">
-					<div class="title">
-						<hr>
-						<p>TAUTAN INTERNAL</p>
+<section class="crumina-module crumina-module-slider medium-padding100">
+		
+		<div class="container">
+			<div class="row">
+				<div class="crumina-module crumina-module-img-bottom">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<div class="crumina-module crumina-heading">
+							<h2 class="heading-title">Kumpulan Aplikasi Pendukung E-GOVERNMENT</h2>
+						</div>
 					</div>
-
-											<a target=&quot;_blank&quot; href="http://git.samarindakota.go.id">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/git-source-repo.jpg" style="display: inline-block;">
-						</a>
-											<a target=&quot;_blank&quot; href="https://apes.samarindakota.go.id">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/jdih-samarinda.jpg" style="display: inline-block;">
-						</a>
-											<a target=&quot;_blank&quot; href="http://api.samarindakota.go.id">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/samarinda-api.jpg" style="display: inline-block;">
-						</a>
-											<a target=&quot;_blank&quot; href="http://data.samarindakota.go.id">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/open-data-samarinda.jpg" style="display: inline-block;">
-						</a>
-											<a target=&quot;_blank&quot; href="https://sipedas.samarindakota.go.id">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/sipedas-samarinda.jpg" style="display: inline-block;">
-						</a>
-											<a target=&quot;_blank&quot; href="https://pmks.samarindakota.go.id">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/pmks-samarinda.jpg" style="display: inline-block;">
-						</a>
-											<a target=&quot;_blank&quot; href="http://e-tepian.samarindakota.go.id/">
-							<img alt="" src="https://samarindakota.go.id/storage/portal/tautan/2018-12/12/e-tepian.jpeg" style="display: inline-block;">
-						</a>
-						
-
 				</div>
-			</div>
-			<div class="col-lg-3">
-				<div id="tautan-konten">
-					<div class="title">
-						<p class="eksternal">TAUTAN EKSTERNAL</p>
+
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="swiper-container pagination-bottom" data-show-items="2">
+						<div class="swiper-wrapper">
+<?php
+	$egovs = $this->pocore()->call->podb->from('egov')
+	->orderBy('id DESC')
+	->fetchAll();
+        
+	foreach($egovs as $egov){
+?>
+							<!--ITEM LIST-->
+							<div class="swiper-slide">
+								<div class="crumina-module crumina-case-item" data-mh="case-item">
+									<a href="img/case1.jpg" class="case-item__thumb js-zoom-image">
+										<img src="<?=$this->asset('/images/background/case1.jpg')?>" alt="case">
+									</a>
+
+									<div class="square-colored bg-product-blue"></div>
+									<div class="case-item-content">
+										<h5 class="title"><?=$egov['nama'];?></h5>
+										<a href="<?=$egov['alamat'];?>" class="more-arrow white">
+											<span>Kunjungi</span>
+											<div class="btn-next">
+												<svg class="utouch-icon icon-hover utouch-icon-arrow-right-1"><use xlink:href="#utouch-icon-arrow-right-1"></use></svg>
+												<svg class="utouch-icon utouch-icon-arrow-right1"><use xlink:href="#utouch-icon-arrow-right1"></use></svg>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						<!--END ITEM LIST-->
+	<?php } ?>
+						</div>
+
+						<!-- If we need pagination -->
+						<div class="swiper-pagination bottom-left"></div>
 					</div>
-
-											<a target=&quot;_blank&quot; href="http://www.ksp.go.id/">
-							<img alt="" class="eksternal" src="https://samarindakota.go.id/storage/portal/tautan/2018-10/13/eksternal.jpg" style="display: inline-block;">
-						</a>
-						
-
 				</div>
-				<div id="tautan-kanan"></div>
+
 			</div>
 		</div>
-	</div>
-</section>    
+	</section>
+
+	<!-- ... end Case Items -->
+
+
+
 	<style type="text/css">
 	.testimonial-item-arrow {
 		padding: 10px;

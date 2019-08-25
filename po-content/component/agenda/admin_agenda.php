@@ -63,37 +63,38 @@ class Agenda extends PoCore
 			exit;
 		}
 		?>
-		<div class="block-content">
-			<div class="row">
-				<div class="col-md-12">
-					<?=$this->pohtml->headTitle('Agenda', '
+    <div class="block-content">
+        <div class="row">
+            <div class="col-md-12">
+                <?=$this->pohtml->headTitle('Agenda', '
 						<div class="btn-title pull-right">
 							<a href="admin.php?mod=agenda&act=addnew" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> '.$GLOBALS['_']['addnew'].'</a>
 						</div>
 					');?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=agenda&act=multidelete', 'autocomplete' => 'off'));?>
-						<?=$this->pohtml->inputHidden(array('name' => 'totaldata', 'value' => '0', 'options' => 'id="totaldata"'));?>
-						<?php
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=agenda&act=multidelete', 'autocomplete' => 'off'));?>
+                    <?=$this->pohtml->inputHidden(array('name' => 'totaldata', 'value' => '0', 'options' => 'id="totaldata"'));?>
+                        <?php
 							$columns = array(
 								array('title' => 'Id', 'options' => 'style="width:30px;"'),
 								array('title' => 'Judul agenda', 'options' => ''),
 								array('title' => 'Tanggal', 'options' => ''),
 								array('title' => 'Pelaksana', 'options' => ''),
 								array('title' => 'Lokasi', 'options' => ''),
+								array('title' => 'Gambar', 'options' => ''),
 								array('title' => 'Action', 'options' => 'class="no-sort" style="width:50px;"')
 							);
 						?>
-						<?=$this->pohtml->createTable(array('id' => 'table-agenda', 'class' => 'table table-striped table-bordered'), $columns, $tfoot = true);?>
-					<?=$this->pohtml->formEnd();?>
-				</div>
-			</div>
-		</div>
-		<?=$this->pohtml->dialogDelete('agenda');?>
-		<?php
+                            <?=$this->pohtml->createTable(array('id' => 'table-agenda', 'class' => 'table table-striped table-bordered'), $columns, $tfoot = true);?>
+                                <?=$this->pohtml->formEnd();?>
+            </div>
+        </div>
+    </div>
+    <?=$this->pohtml->dialogDelete('agenda');?>
+        <?php
 	}
 
 	/**
@@ -124,7 +125,8 @@ class Agenda extends PoCore
 			array('db' => 'tanggal', 'dt' => '3', 'field' => 'tanggal'),
 			array('db' => 'pelaksana', 'dt' => '4', 'field' => 'pelaksana'),
 			array('db' => 'lokasi', 'dt' => '5', 'field' => 'lokasi'),
-			array('db' => $primarykey, 'dt' => '6', 'field' => $primarykey,
+			array('db' => 'foto', 'dt' => '6', 'field' => 'foto'),
+			array('db' => $primarykey, 'dt' => '7', 'field' => $primarykey,
 				'formatter' => function($d, $row, $i){
 					return "<div class='text-center'>
 						<div class='btn-group btn-group-xs'>
@@ -158,6 +160,7 @@ class Agenda extends PoCore
 				'jam' => $_POST['jam'],
 				'pelaksana' => $this->postring->valid($_POST['pelaksana'], 'xss'),
 				'lokasi' => $this->postring->valid($_POST['lokasi'], 'xss'),
+				'foto' => $_POST['foto'],
 				'deskripsi' => stripslashes(htmlspecialchars($_POST['deskripsi'],ENT_QUOTES)),
 			);
 			$query = $this->podb->insertInto('agenda')->values($agenda);
@@ -165,57 +168,64 @@ class Agenda extends PoCore
 			$this->poflash->success('Agenda has been successfully added', 'admin.php?mod=agenda');
 		}
 		?>
-		<div class="block-content">
-			<div class="row">
-				<div class="col-md-12">
-					<?=$this->pohtml->headTitle('Add Agenda');?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=agenda&act=addnew', 'autocomplete' => 'off'));?>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="judul_agenda">Judul agenda</label>
-									<input type="text" name="judul_agenda" class="form-control" id="judul_agenda" value="<?=(isset($_POST['judul_agenda']) ? $_POST['judul_agenda'] : '');?>" placeholder="Judul agenda" />
-								</div>
-							</div>
-							<div class="col-md-3">
-								<?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Tanggal', 'name' => 'tanggal', 'id' => 'date', 'mandatory' => false, 'options' => ''));?>
-							</div>
-							<div class="col-md-3">
-								<?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Jam', 'name' => 'jam', 'id' => 'time', 'mandatory' => false, 'options' => ''));?>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="pelaksana">Pelaksana</label>
-									<input type="text" name="pelaksana" class="form-control" id="pelaksana" value="<?=(isset($_POST['pelaksana']) ? $_POST['pelaksana'] : '');?>" placeholder="Pelaksana" />
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="lokasi">Lokasi</label>
-									<input type="text" name="lokasi" class="form-control" id="lokasi" value="<?=(isset($_POST['lokasi']) ? $_POST['lokasi'] : '');?>" placeholder="Lokasi" />
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="deskripsi">Deskripsi</label>
-									<textarea name="deskripsi" class="form-control" id="po-wysiwyg" placeholder="Deskripsi" style="width:100%; height:300px;"><?=(isset($_POST['deskripsi']) ? $_POST['deskripsi'] : '');?></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<?=$this->pohtml->formAction();?>
-							</div>
-						</div>
-					<?=$this->pohtml->formEnd();?>
-				</div>
-			</div>
-		</div>
-		<?php
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?=$this->pohtml->headTitle('Add Agenda');?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=agenda&act=addnew', 'autocomplete' => 'off'));?>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="judul_agenda">Judul agenda</label>
+                                        <input type="text" name="judul_agenda" class="form-control" id="judul_agenda" value="<?=(isset($_POST['judul_agenda']) ? $_POST['judul_agenda'] : '');?>" placeholder="Judul agenda" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Tanggal', 'name' => 'tanggal', 'id' => 'date', 'mandatory' => false, 'options' => ''));?>
+                                </div>
+                                <div class="col-md-3">
+                                    <?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Jam', 'name' => 'jam', 'id' => 'time', 'mandatory' => false, 'options' => ''));?>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="pelaksana">Pelaksana</label>
+                                        <input type="text" name="pelaksana" class="form-control" id="pelaksana" value="<?=(isset($_POST['pelaksana']) ? $_POST['pelaksana'] : '');?>" placeholder="Pelaksana" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="lokasi">Lokasi</label>
+                                        <input type="text" name="lokasi" class="form-control" id="lokasi" value="<?=(isset($_POST['lokasi']) ? $_POST['lokasi'] : '');?>" placeholder="Lokasi" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Gambar', 'name' => 'foto', 'id' => 'picture', 'mandatory' => true, 'options' => 'required',), $inputgroup = true, $inputgroupopt = array('href' => '../'.DIR_INC.'/js/filemanager/dialog.php?type=1&field_id=picture', 'id' => 'browse-file', 'class' => 'btn-success', 'options' => '', 'title' => $GLOBALS['_']['action_7'].'agenda'));?>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <textarea name="deskripsi" class="form-control" id="po-wysiwyg" placeholder="Deskripsi" style="width:100%; height:300px;">
+                                            <?=(isset($_POST['deskripsi']) ? $_POST['deskripsi'] : '');?>
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <?=$this->pohtml->formAction();?>
+                                </div>
+                            </div>
+                            <?=$this->pohtml->formEnd();?>
+                    </div>
+                </div>
+            </div>
+            <?php
 	}
 
 	/**
@@ -238,6 +248,7 @@ class Agenda extends PoCore
 				'jam' => $_POST['jam'],
 				'pelaksana' => $this->postring->valid($_POST['pelaksana'], 'xss'),
 				'lokasi' => $this->postring->valid($_POST['lokasi'], 'xss'),
+				'foto' => $_POST['foto'],
 				'deskripsi' => stripslashes(htmlspecialchars($_POST['deskripsi'],ENT_QUOTES)),
 			);
 			$query = $this->podb->update('agenda')
@@ -256,58 +267,65 @@ class Agenda extends PoCore
 			exit;
 		}
 		?>
-		<div class="block-content">
-			<div class="row">
-				<div class="col-md-12">
-					<?=$this->pohtml->headTitle('Update Agenda');?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=agenda&act=edit', 'autocomplete' => 'off'));?>
-						<?=$this->pohtml->inputHidden(array('name' => 'id', 'value' => $current_agenda['id']));?>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="judul_agenda">Judul agenda</label>
-									<input type="text" name="judul_agenda" class="form-control" id="judul_agenda" value="<?=(isset($_POST['judul_agenda']) ? $_POST['judul_agenda'] : $current_agenda['judul_agenda']);?>" placeholder="Judul agenda" />
-								</div>
-							</div>
-							<div class="col-md-3">
-								<?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Tanggal', 'name' => 'tanggal', 'id' => 'date', 'value' => $current_agenda['tanggal'], 'mandatory' => false, 'options' => ''));?>
-							</div>
-							<div class="col-md-3">
-								<?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Jam', 'name' => 'jam', 'id' => 'time', 'value' => $current_agenda['jam'], 'mandatory' => false, 'options' => ''));?>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="pelaksana">Pelaksana</label>
-									<input type="text" name="pelaksana" class="form-control" id="pelaksana" value="<?=(isset($_POST['pelaksana']) ? $_POST['pelaksana'] : $current_agenda['pelaksana']);?>" placeholder="Pelaksana" />
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="lokasi">Lokasi</label>
-									<input type="text" name="lokasi" class="form-control" id="lokasi" value="<?=(isset($_POST['lokasi']) ? $_POST['lokasi'] : $current_agenda['lokasi']);?>" placeholder="Lokasi" />
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="deskripsi">Deskripsi</label>
-									<textarea name="deskripsi" class="form-control" id="po-wysiwyg" placeholder="Deskripsi" style="width:100%; height:300px;"><?=(isset($_POST['deskripsi']) ? $_POST['deskripsi'] : $current_agenda['deskripsi']);?></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<?=$this->pohtml->formAction();?>
-							</div>
-						</div>
-					<?=$this->pohtml->formEnd();?>
-				</div>
-			</div>
-		</div>
-		<?php
+                <div class="block-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?=$this->pohtml->headTitle('Update Agenda');?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=agenda&act=edit', 'autocomplete' => 'off'));?>
+                                <?=$this->pohtml->inputHidden(array('name' => 'id', 'value' => $current_agenda['id']));?>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="judul_agenda">Judul agenda</label>
+                                                <input type="text" name="judul_agenda" class="form-control" id="judul_agenda" value="<?=(isset($_POST['judul_agenda']) ? $_POST['judul_agenda'] : $current_agenda['judul_agenda']);?>" placeholder="Judul agenda" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Tanggal', 'name' => 'tanggal', 'id' => 'date', 'value' => $current_agenda['tanggal'], 'mandatory' => false, 'options' => ''));?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Jam', 'name' => 'jam', 'id' => 'time', 'value' => $current_agenda['jam'], 'mandatory' => false, 'options' => ''));?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="pelaksana">Pelaksana</label>
+                                                <input type="text" name="pelaksana" class="form-control" id="pelaksana" value="<?=(isset($_POST['pelaksana']) ? $_POST['pelaksana'] : $current_agenda['pelaksana']);?>" placeholder="Pelaksana" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="lokasi">Lokasi</label>
+                                                <input type="text" name="lokasi" class="form-control" id="lokasi" value="<?=(isset($_POST['lokasi']) ? $_POST['lokasi'] : $current_agenda['lokasi']);?>" placeholder="Lokasi" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <?=$this->pohtml->inputText(array('type' => 'text', 'label' => 'Gambar', 'name' => 'foto', 'id' => 'picture', 'mandatory' => true, 'options' => 'required',), $inputgroup = true, $inputgroupopt = array('href' => '../'.DIR_INC.'/js/filemanager/dialog.php?type=1&field_id=picture', 'id' => 'browse-file', 'class' => 'btn-success', 'options' => '', 'title' => $GLOBALS['_']['action_7'].'agenda'));?>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <textarea name="deskripsi" class="form-control" id="po-wysiwyg" placeholder="Deskripsi" style="width:100%; height:300px;">
+                                                    <?=(isset($_POST['deskripsi']) ? $_POST['deskripsi'] : $current_agenda['deskripsi']);?>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <?=$this->pohtml->formAction();?>
+                                        </div>
+                                    </div>
+                                    <?=$this->pohtml->formEnd();?>
+                        </div>
+                    </div>
+                </div>
+                <?php
 	}
 
 	/**
