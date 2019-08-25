@@ -277,13 +277,13 @@ class perangkat_daerah extends PoCore
 			$perangkat_daerah = array(
 				'nama_singkat' => $this->postring->valid($_POST['nama_singkat'], 'xss'),
 				'nama_panjang' => $this->postring->valid($_POST['nama_panjang'], 'xss'),
-				'seourl' => $this->postring->seo_title($this->postring->valid($_POST['nama_singkat'], 'xss')),
 				'idkategori' => $this->postring->valid($_POST['idkategori'], 'xss'),
 				'email' => $this->postring->valid($_POST['email'], 'xss'),
 				'telp' => $this->postring->valid($_POST['telp'], 'xss'),
 				'website' => $this->postring->valid($_POST['website'], 'xss'),
 				'web' => $this->postring->valid($_POST['web'], 'xss'),
 				'alamat_kantor' => $this->postring->valid($_POST['alamat_kantor'], 'xss'),
+				'seourl' => $this->postring->seo_title($this->postring->valid($_POST['nama_singkat'], 'xss')),
 				'deskripsi' => stripslashes(htmlspecialchars($_POST['deskripsi'],ENT_QUOTES)),
 			);
 			$query = $this->podb->update('perangkat_daerah')
@@ -294,7 +294,9 @@ class perangkat_daerah extends PoCore
 		}
 		$id = $this->postring->valid($_GET['id'], 'sql');
 		$current_perangkat_daerah = $this->podb->from('perangkat_daerah')
-			->where('id', $id)
+			->select('katperangkatdaerah.namakategori AS namakategori')
+			->leftJoin('katperangkatdaerah ON katperangkatdaerah.idkategori = perangkat_daerah.idkategori')
+			->where('perangkat_daerah.id', $id)
 			->limit(1)
 			->fetch();
 		if (empty($current_perangkat_daerah)) {
@@ -310,7 +312,8 @@ class perangkat_daerah extends PoCore
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=perangkat_daerah&act=addnew', 'autocomplete' => 'off'));?>
+					<?=$this->pohtml->formStart(array('method' => 'post', 'action' => 'route.php?mod=perangkat_daerah&act=edit', 'autocomplete' => 'off'));?>
+					<?=$this->pohtml->inputHidden(array('name' => 'id', 'value' => $current_perangkat_daerah['id']));?>
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group">
@@ -331,6 +334,7 @@ class perangkat_daerah extends PoCore
 											->orderBy('idkategori DESC')
 											->fetchAll();
 										echo $this->pohtml->inputSelectNoOpt(array('id' => 'idkategori', 'label' => 'Kategori', 'name' => 'idkategori', 'mandatory' => true));
+										echo '<option value="'.$current_perangkat_daerah['idkategori'].'">'.'Terpilih'.' - '.$current_perangkat_daerah['namakategori'].'</option>';
 										foreach($kats as $kat){
 											echo '<option value="'.$kat['idkategori'].'">'.$kat['namakategori'].'</option>';
 										}
