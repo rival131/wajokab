@@ -8,15 +8,18 @@
  * - License : MIT License
  *
  *
- * Ini adalah file utama javascript PopojiCMS yang memuat semua javascript di pendidikandetailsekolah.
- * This is a main javascript file from PopojiCMS which contains all javascript in pendidikandetailsekolah.
+ * Ini adalah file utama javascript PopojiCMS yang memuat semua javascript di detailfasilitaskesehatan.
+ * This is a main javascript file from PopojiCMS which contains all javascript in detailfasilitaskesehatan.
  *
 */
 
 $(document).ready(function() {
-	$('#table-pendidikandetailsekolah').buildtable('route.php?mod=pendidikandetailsekolah&act=datatable');
+	$('#table-detailfasilitaskesehatan').buildtable('route.php?mod=detailfasilitaskesehatan&act=datatable');
 });
 
+$(document).ready(function() {
+	$('#table-katfasilitaskesehatan').buildtable('route.php?mod=katfasilitaskesehatan&act=datatable2');
+});
 
 
 $(document).ready(function() {

@@ -39,8 +39,7 @@
 
 <!-- DATATABLE -->
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css"/>  -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/> 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/e-1.9.0/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.css"/> 
+
 
 
 	<!--External fonts-->
@@ -337,7 +336,7 @@
 		</script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-		<script type="text/javascript">
+		<script type="text/javascript" language="javascript" >
 			var html;
 			$.simpleWeather({
 				location: 'Sengkang, Sulawesi Selatan',
@@ -390,7 +389,7 @@
 
 		
 	    	<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" language="javascript" >
         $(window).on("load", function() {
             $('#instafeed-gallery-feed > a > img').each(function(){
                 var src = $(this).attr('src');
@@ -420,14 +419,21 @@
 
 
 
-<!-- DataTables -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script> 
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/e-1.9.0/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>    -->
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script> 
+
 
 
 </body>
+<script type="text/javascript" language="javascript"  src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript"  src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript"  src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+
+<script type="text/javascript" language="javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> 
+<script type="text/javascript" language="javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script> 
+<script type="text/javascript" language="javascript"  src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/e-1.9.0/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
+<!-- <script type="text/javascript" language="javascript"  src="https://code.jquery.com/jquery-3.3.1.js"></script>    -->
+<script type="text/javascript" language="javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>  
+<script type="text/javascript" language="javascript"  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" language="javascript"  src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script> 
+<script type="text/javascript" language="javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> 
+
 </html>

@@ -238,17 +238,17 @@
 												<li class="megamenu-item-info">
 													<h5 class="megamenu-item-info-title">Kesehatan</h5>
 													<p class="megamenu-item-info-text">
-														<small>Sumber: Dinas Kesehatan</small>
+														<small>Sumber: Pusat Data Kabupaten Wajo</small>
 													</p>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/kesehatan?pages=rumah-sakit">Rumah Sakit</a>
+													<a href="<?=BASE_URL;?>/detailfasilitaskesehatan/rumah-sakit">Rumah Sakit</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/kesehatan?pages=puskesmas">Puskesmas</a>
+													<a href="<?=BASE_URL;?>/detailfasilitaskesehatan/puskesmas">Puskesmas</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/kesehatan?pages=apotik">Apotik</a>
+													<a href="<?=BASE_URL;?>/detailfasilitaskesehatan/apotik">Apotik</a>
 												</li>
 											</ul>
 											<br/>
@@ -275,7 +275,7 @@
 												<li class="megamenu-item-info">
 													<h5 class="megamenu-item-info-title">Pendidikan</h5>
 													<p class="megamenu-item-info-text">
-														<small>Sumber: Dinas Pendidikan</small>
+														<small>Sumber: Dapodik</small>
 													</p>
 												</li>
 												<li>
