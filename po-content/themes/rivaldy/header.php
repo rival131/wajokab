@@ -128,7 +128,7 @@
 							</li>
 
 							<li class="menu-item-has-mega-menu menu-item-has-children">
-								<a href="#">Pemerintahan</a>
+								<a href="<?=BASE_URL;?>/kategoriperangkat_daerah">Pemerintahan</a>
 
 								<div class="megamenu" style="background-image: url(<?=$this->asset('/images/menu-pemerintahan.png')?>;">
 									<div class="megamenu-row">
@@ -173,22 +173,22 @@
 													<p class="megamenu-item-info-text">Informasi Perangkat Daerah</p>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pemerintahan/kesekretariatan">Kesekretariatan</a>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/kesekretariat">Kesekretariatan</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pemerintahan/badan-daerah">Badan Daerah</a>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/badan-daerah">Badan Daerah</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pemerintahan/dinas">Dinas</a>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/dinas">Dinas</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pemerintahan/kecamatan">Kecamatan</a>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/kecamatan">Kecamatan</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pemerintahan/kelurahan">Kelurahan</a>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/kelurahan">Kelurahan</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pemerintahan/bumd">BUMD</a>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/bumd">BUMD</a>
 												</li>
 											</ul>
 										</div>
@@ -279,22 +279,22 @@
 													</p>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=tk-paud">TK / PAUD</a>
+													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/tkpaud">TK / PAUD</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=sd">SD</a>
+													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/sd">SD</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=smp">SMP</a>
+													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/smp">SMP</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=sma-smk">SMA / SMK</a>
+													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/smasmk">SMA / SMK</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=perguruan-tinggi">Perguruan Tinggi</a>
+													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/perguruan-tinggi">Perguruan Tinggi</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/sarana-prasarana/pendidikan?pages=balai-kursus">Balai Kursus</a>
+													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/balai-kursus">Balai Kursus</a>
 												</li>
 											</ul>
 											<br/>

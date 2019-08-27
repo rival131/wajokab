@@ -85,7 +85,7 @@ class perangkat_daerah extends PoCore
 								array('title' => 'Email', 'options' => ''),
 								array('title' => 'Telp', 'options' => ''),
 								array('title' => 'Website', 'options' => ''),
-								array('title' => 'Alamat', 'options' => ''),
+								array('title' => 'Alamat Kantor', 'options' => ''),
 								array('title' => 'Deskripsi', 'options' => ''),
 								array('title' => 'Action', 'options' => 'class="no-sort" style="width:50px;"')
 							);
@@ -167,7 +167,6 @@ class perangkat_daerah extends PoCore
 				'email' => $this->postring->valid($_POST['email'], 'xss'),
 				'telpon' => $this->postring->valid($_POST['telpon'], 'xss'),
 				'website' => $this->postring->valid($_POST['website'], 'xss'),
-				'web' => $this->postring->valid($_POST['web'], 'xss'),
 				'alamat_kantor' => $this->postring->valid($_POST['alamat_kantor'], 'xss'),
 				'deskripsi' => stripslashes(htmlspecialchars($_POST['deskripsi'],ENT_QUOTES)),
 				
@@ -236,8 +235,8 @@ class perangkat_daerah extends PoCore
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="alamat">Alamat Kantor</label>
-									<input type="text" name="alamat" class="form-control" id="alamat" value="<?=(isset($_POST['alamat_kantor']) ? $_POST['alamat_kantor'] :'');?>" placeholder="Alamat Kantor" />
+									<label for="alamat_kantor">Alamat Kantor</label>
+									<input type="text" name="alamat_kantor" class="form-control" id="alamat_kantor" value="<?=(isset($_POST['alamat_kantor']) ? $_POST['alamat_kantor'] :'');?>" placeholder="Alamat Kantor" />
 								</div>
 							</div>
 							<div class="col-md-12">
@@ -277,11 +276,10 @@ class perangkat_daerah extends PoCore
 			$perangkat_daerah = array(
 				'nama_singkat' => $this->postring->valid($_POST['nama_singkat'], 'xss'),
 				'nama_panjang' => $this->postring->valid($_POST['nama_panjang'], 'xss'),
-				'idkategori' => $this->postring->valid($_POST['idkategori'], 'xss'),
+				'idkategori' => $this->postring->valid($_POST['idkategori'], 'sql'),
 				'email' => $this->postring->valid($_POST['email'], 'xss'),
-				'telp' => $this->postring->valid($_POST['telp'], 'xss'),
+				'telpon' => $this->postring->valid($_POST['telpon'], 'xss'),
 				'website' => $this->postring->valid($_POST['website'], 'xss'),
-				'web' => $this->postring->valid($_POST['web'], 'xss'),
 				'alamat_kantor' => $this->postring->valid($_POST['alamat_kantor'], 'xss'),
 				'seourl' => $this->postring->seo_title($this->postring->valid($_POST['nama_singkat'], 'xss')),
 				'deskripsi' => stripslashes(htmlspecialchars($_POST['deskripsi'],ENT_QUOTES)),
@@ -341,7 +339,7 @@ class perangkat_daerah extends PoCore
 										echo $this->pohtml->inputSelectNoOptEnd();
 									?>
 									<span class="input-group-btn" style="padding-top:25px !important;">
-										<a href="admin.php?mod=gallery&act=addnewalbum" class="btn btn-success"><?=$GLOBALS['_']['addnew'];?></a>
+										<a href="admin.php?mod=perangkat_daerah&act=addnew" class="btn btn-success"><?=$GLOBALS['_']['addnew'];?></a>
 									</span>
 								</div>
 							</div>
@@ -365,8 +363,8 @@ class perangkat_daerah extends PoCore
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="alamat">Alamat Kantor</label>
-									<input type="text" name="alamat" class="form-control" id="alamat" value="<?=(isset($_POST['alamat_kantor']) ? $_POST['alamat_kantor'] :$current_perangkat_daerah['alamat_kantor']);?>" placeholder="Alamat Kantor" />
+									<label for="alamat_kantor">Alamat</label>
+									<input type="text" name="alamat_kantor" class="form-control" id="alamat_kantor" value="<?=(isset($_POST['alamat_kantor']) ? $_POST['alamat_kantor'] :$current_perangkat_daerah['alamat_kantor']);?>" placeholder="alamat_kantor" />
 								</div>
 							</div>
 							<div class="col-md-12">

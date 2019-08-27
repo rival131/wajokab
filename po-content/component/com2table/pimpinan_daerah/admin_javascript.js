@@ -4,21 +4,21 @@
  *
  * - File : admin_javascript.js
  * - Version : 1.0
- * - Author : Rivaldy
+ * - Author : cmink
  * - License : MIT License
  *
  *
- * Ini adalah file utama javascript PopojiCMS yang memuat semua javascript di perangkat_daerah.
- * This is a main javascript file from PopojiCMS which contains all javascript in perangkat_daerah.
+ * Ini adalah file utama javascript PopojiCMS yang memuat semua javascript di pimpinan_daerah.
+ * This is a main javascript file from PopojiCMS which contains all javascript in pimpinan_daerah.
  *
 */
 
 $(document).ready(function() {
-	$('#table-perangkat_daerah').buildtable('route.php?mod=perangkat_daerah&act=datatable');
+	$('#table-pimpinan_daerah').buildtable('route.php?mod=pimpinan_daerah&act=datatable');
 });
 
 $(document).ready(function() {
-	$('#table-katperangkatdaerah').buildtable('route.php?mod=perangkat_daerah&act=datatable2');
+	$('#table-kategori_pimpinan_daerah').buildtable('route.php?mod=pimpinan_daerah&act=datatable2');
 });
 
 $(document).ready(function() {
