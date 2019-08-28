@@ -74,7 +74,7 @@
               <div class="icon">
                 <i class="fas fa-shopping-cart"></i>
               </div>
-              <a href="<?BASE_URL;?>/detailfasilitaskesehatan/rumah-sakit" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/detailfasilitaskesehatan/rumah-sakit" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -102,7 +102,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?BASE_URL;?>/detailfasilitaskesehatan/puskesmas" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/detailfasilitaskesehatan/puskesmas" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -130,7 +130,7 @@
               <div class="icon">
                 <i class="fas fa-user-plus"></i>
               </div>
-              <a href="<?BASE_URL;?>/detailfasilitaskesehatan/apotik" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/detailfasilitaskesehatan/apotik" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>

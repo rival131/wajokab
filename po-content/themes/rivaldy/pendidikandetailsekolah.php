@@ -13,39 +13,36 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/> 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css"/> 
 
-
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://adminlte.io/themes/dev/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://adminlte.io/themes/dev/AdminLTE/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://adminlte.io/themes/dev/AdminLTE/node_modules/bootstrap/scss/mixins/_image.scss">
 <!-- Breadcrumbs -->
-
-<div class="container">
-		<div class="row">
-			<div class="breadcrumbs-wrap inline-items with-border">
-				<a href="<?=BASE_URL;?>" class="btn btn--transparent btn--round">
-					<svg class="utouch-icon utouch-icon-home-icon-silhouette"><use xlink:href="#utouch-icon-home-icon-silhouette"></use></svg>
-				</a>
-
-				<ul class="breadcrumbs">
-					<li class="breadcrumbs-item">
-						<a href="<?=BASE_URL.'/pages/'.$this->e($pages['seotitle']);?>"><?=$this->e($front_pages);?></a>
-						<svg class="utouch-icon utouch-icon-media-play-symbol"><use xlink:href="#utouch-icon-media-play-symbol"></use></svg>
-					</li>
-					
-				</ul>
-			</div>
+<!-- STUNNING HEADER -->
+<div class="header-spacer"></div>
+<div class="crumina-stunning-header stunning-header--breadcrumbs-bottom-left stunning-header--content-inline stunning-bg-batik" 
+		style="padding-top: 50px;">
+		<div class="container-fluid">
+			
 		</div>
 	</div>
+	<section class="bg-secondary-color">
 
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1></h1>
-          </div>
-          <div class="col-sm-6">
-           
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+			<div class="container">
+				<div class="row">
+					<div class="counters" style="padding: 50px 0 30px;">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<h5 class="c-white">Dalam Proses Integrasi</h5>
+							<p class="c-semitransparent-white">Mohon maaf, apabila ada data kosong, kami masih dalam tahap integrasi dengan Dinas terkait.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	</section>
 
 <!-- Info Boxes -->
 <section class="content">
@@ -74,7 +71,7 @@
               <div class="icon">
                 <i class="fas fa-shopping-cart"></i>
               </div>
-              <a href="<?BASE_URL;?>/pendidikandetailsekolah/sd" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/pendidikankatsekolah/sd" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -102,7 +99,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?BASE_URL;?>/pendidikandetailsekolah/smp" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/pendidikankatsekolah/smp" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -130,7 +127,7 @@
               <div class="icon">
                 <i class="fas fa-user-plus"></i>
               </div>
-              <a href="<?BASE_URL;?>/pendidikandetailsekolah/smasmk" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/pendidikankatsekolah/smasmk" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -158,7 +155,7 @@
               <div class="icon">
                 <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="<?BASE_URL;?>/pendidikandetailsekolah/perguruan-tinggi" class="small-box-footer">
+              <a href="<?=BASE_URL;?>/pendidikankatsekolah/perguruan-tinggi" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -170,95 +167,169 @@
     </div>
 </section>
 
+<?php
+                $limit = '1';
+        $offset = $this->pocore()->call->popaging->searchPosition($limit, $this->e($page));
 
+                $pendidikandetailsekolahs = $this->pocore()->call->podb->from('pendidikandetailsekolah')->where('id', $pendidikandetailsekolah['id'])->orderBy('id')->limit($offset.','.$limit)->fetchAll();
+        $notab = $offset+1;
+                  
 
-    
+                  foreach($pendidikandetailsekolahs as $pendidikandetailsekolah){
+                ?>
+<!-- ISI -->
 
-    <section class="crumina-module crumina-module-slider medium-padding100">
-	<div class="container">
-		<div class="row">
-        <div class="box-body table-responsive no-padding">
-        <table id="example" class="display" style="width:100%">
-    <thead>
-    
-        <tr class="warning">
-            <th>NO</th>
-            <th>NPSN</th>
-            <th>NAMA SEKOLAH</th>
-            <th>ALAMAT</th>
-            <th>KECAMATAN</th>
-            <th>STATUS</th>
-            <th>WEBSITE</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-                                $no = 0;
-    							// $limit = '5';
-    							// $offset = $this->pocore()->call->popaging->searchPosition($limit, $this->e($page));
-                                $querys = $this->pocore()->call->podb->from('pendidikandetailsekolah')
-                                ->where('idkategori', $pendidikankatsekolah['idkategori'])
-                                ->orderBy('idkategori DESC')
-                                // ->limit($offset.','.$limit)
-                                ->fetchAll();
-    							
-    							foreach($querys as $query) {
+<!-- Content Wrapper. Contains page content -->
+<div class="container">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+DETAIL DATA SEKOLAH : <?=$pendidikandetailsekolah['namasekolah'];?>      </h1>
+     
+    </section>
 
-                                    $no++;
-    						?>
-    						
-        <tr class="active">
-            <td><?=$no?></td>
-            <td><?=$query['npsn'];?></td>
-            <td><?=$query['namasekolah'];?></td>
-            <td><?=$query['alamat'];?></td>
-            <td><?=$query['kecamatan'];?></td>
-            <td><?=$query['status'];?></td>
-            <td><?php 
-            if($query['website']==null){
-                echo 'Offline';
+    <!-- Main content -->
+<section class="crumina-module crumina-module-slider medium-padding100">
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="<?=$this->asset('/images/logo/logo-pendidikan.png')?>"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center"><?=$pendidikandetailsekolah['namasekolah'];?></h3>
+
+                <p class="text-muted text-center">Alamat :<? if ($pendidikandetailsekolah['alamat']==null){
+                        echo 'Data belum di input.';
+                      } else {
+                        echo $pendidikandetailsekolah['alamat'];
+                      }
+                        ?></p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                <li class="list-group-item">
+                    <b>NPSN</b> <a class="float-right"><?=$pendidikandetailsekolah['npsn'];?></a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Kecamatan</b> <a class="float-right"><?=$pendidikandetailsekolah['kecamatan'];?></a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Status</b> <a class="float-right"><?=$pendidikandetailsekolah['status'];?></a>
+                  </li>
+                  
+                </ul>
+                <?php 
+            if($pendidikandetailsekolah['website']==null){
+              echo "<a href='#' class='btn btn-primary btn-danger'><b>Website Belum Ada</b></a>";
             } else {
-                echo "<a href='http://$query[website]'>Online</a>";
+                echo "<a href='http://$pendidikandetailsekolah[website]' class='btn btn-primary btn-block'><b>Kunjungi Website</b></a>";
             }
             
-            ?></td>
-        </tr>
-                                <?php } ?>
-    </tbody>
-</table>
+            ?>
+              
+              </div>
+              <!-- /.card-body -->
+            </div>
+            
+          </div>
+
+
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#detail" data-toggle="tab">Detail</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+            </div>
+            
+            <div class="active tab-pane" id="detail">
+                   <!-- START DETAIL -->                 
+              <div class="card">
+              
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-striped">
+                  <tbody>
+                  <? if ($pendidikandetailsekolah['foto']==null){
+                    echo "<tr colspan='3'><img class='img-fluid-pad' src='../po-content/themes/rivaldy/images/404-image-not-found.jpg' alt='Photo'></tr>";
+                  } else {
+                    echo "<tr colspan='3'><img class='img-fluid-pad' src=".BASE_URL.'/'.DIR_CON.'/uploads/'.$pendidikandetailsekolah['foto']." alt='Photo'></tr>";
+                  }
+                 
+                  
+                  ?>
+                    <tr>
+                      <td>Kepala Sekolah</td>
+                      <td>:</td>
+                      <td>
+                      <? if ($pendidikandetailsekolah['kepalasekolah']==null){
+                        echo 'Data belum di input.';
+                      } else {
+                        echo $pendidikandetailsekolah['kepalasekolah'];
+                      }
+                        ?></td>
+                    </tr>
+                    <tr>
+                      <td>Telp. Sekolah</td>
+                      <td>:</td>
+                      <td>                      <? if ($pendidikandetailsekolah['telp']==null){
+                        echo 'Data belum di input.';
+                      } else {
+                        echo $pendidikandetailsekolah['telp'];
+                      }
+                        ?></td>
+                    </tr>
+                    <tr>
+                      <td>Email Sekolah</td>
+                      <td>:</td>
+                      <td>                      <? if ($pendidikandetailsekolah['email']==null){
+                        echo 'Data belum di input.';
+                      } else {
+                        echo $pendidikandetailsekolah['email'];
+                      }
+                        ?></td>
+                    </tr>
+                    <tr>
+                      <td>Website Sekolah</td>
+                      <td>:</td>
+                      <td>                      <? if ($pendidikandetailsekolah['website']==null){
+                        echo 'Data belum di input.';
+                      } else {
+                        echo $pendidikandetailsekolah['website'];
+                      }
+                        ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+            </div>
+
+
+
+            
+            <!-- /.nav-tabs-custom -->
+          </div>
+
+</div>
 </div>
 
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->  
 
-		</div>
-	</div>
-</section>
-
-<!-- DataTables -->
-<script type="text/javascript" language="javascript"  src="https://code.jquery.com/jquery-3.3.1.js"></script>   
-<script>
-  $(document).ready(function() {
-    $('#sekolah').DataTable( {
-      dom: 'Bfrtip',
-        buttons: [
-            { extend: 'copyHtml5', footer: true },
-            { extend: 'excelHtml5', footer: true },
-            { extend: 'csvHtml5', footer: true },
-            { extend: 'pdfHtml5', footer: true }
-        ]
-    } );
-} );
-</script>
-
-<script>
-$(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            { extend: 'copyHtml5', footer: true },
-            { extend: 'excelHtml5', footer: true },
-            { extend: 'csvHtml5', footer: true },
-            { extend: 'pdfHtml5', footer: true }
-        ]
-    } );
-} );
-</script>
+<!-- END ISI -->
+                  <?php } ?>

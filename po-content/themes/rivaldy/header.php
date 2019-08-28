@@ -242,7 +242,7 @@
 													</p>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/detailfasilitaskesehatan/rumah-sakit">Rumah Sakit</a>
+													<a href="<?=BASE_URL;?>/detailfasilitaskesehatan/rumah-sakit-umum">Rumah Sakit</a>
 												</li>
 												<li>
 													<a href="<?=BASE_URL;?>/detailfasilitaskesehatan/puskesmas">Puskesmas</a>
@@ -279,22 +279,22 @@
 													</p>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/tkpaud">TK / PAUD</a>
+													<a href="<?=BASE_URL;?>/pendidikankatsekolah/tkpaud">TK / PAUD</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/sd">SD</a>
+													<a href="<?=BASE_URL;?>/pendidikankatsekolah/sd">SD</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/smp">SMP</a>
+													<a href="<?=BASE_URL;?>/pendidikankatsekolah/smp">SMP</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/smasmk">SMA / SMK</a>
+													<a href="<?=BASE_URL;?>/pendidikankatsekolah/smasmk">SMA / SMK</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/perguruan-tinggi">Perguruan Tinggi</a>
+													<a href="<?=BASE_URL;?>/pendidikankatsekolah/perguruan-tinggi">Perguruan Tinggi</a>
 												</li>
 												<li>
-													<a href="<?=BASE_URL;?>/pendidikandetailsekolah/balai-kursus">Balai Kursus</a>
+													<a href="<?=BASE_URL;?>/pendidikankatsekolah/balai-kursus">Balai Kursus</a>
 												</li>
 											</ul>
 											<br/>

@@ -14,31 +14,38 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css"/> 
 
 
-<!-- STUNNING HEADER -->
-<div class="header-spacer"></div>
-<div class="crumina-stunning-header stunning-header--breadcrumbs-bottom-left stunning-header--content-inline stunning-bg-batik" 
-		style="padding-top: 50px;">
-		<div class="container-fluid">
-			
+<!-- Breadcrumbs -->
+
+<div class="container">
+		<div class="row">
+			<div class="breadcrumbs-wrap inline-items with-border">
+				<a href="<?=BASE_URL;?>" class="btn btn--transparent btn--round">
+					<svg class="utouch-icon utouch-icon-home-icon-silhouette"><use xlink:href="#utouch-icon-home-icon-silhouette"></use></svg>
+				</a>
+
+				<ul class="breadcrumbs">
+					<li class="breadcrumbs-item">
+						<a href="<?=BASE_URL.'/pages/'.$this->e($pages['seotitle']);?>"><?=$this->e($front_pages);?></a>
+						<svg class="utouch-icon utouch-icon-media-play-symbol"><use xlink:href="#utouch-icon-media-play-symbol"></use></svg>
+					</li>
+					
+				</ul>
+			</div>
 		</div>
 	</div>
-	<section class="bg-secondary-color">
 
-			<div class="container">
-				<div class="row">
-					<div class="counters" style="padding: 50px 0 30px;">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<h5 class="c-white">Dalam Proses Integrasi</h5>
-							<p class="c-semitransparent-white">Mohon maaf, apabila ada data kosong, kami masih dalam tahap integrasi dengan Dinas terkait.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-	</section>
-
-
-
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1></h1>
+          </div>
+          <div class="col-sm-6">
+           
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
 <!-- Info Boxes -->
 <section class="content">
@@ -67,7 +74,7 @@
               <div class="icon">
                 <i class="fas fa-shopping-cart"></i>
               </div>
-              <a href="<?=BASE_URL;?>/pendidikankatsekolah/sd" class="small-box-footer">
+              <a href="<?BASE_URL;?>/pendidikandetailsekolah/sd" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -95,7 +102,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?=BASE_URL;?>/pendidikankatsekolah/smp" class="small-box-footer">
+              <a href="<?BASE_URL;?>/pendidikandetailsekolah/smp" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -123,7 +130,7 @@
               <div class="icon">
                 <i class="fas fa-user-plus"></i>
               </div>
-              <a href="<?=BASE_URL;?>/pendidikankatsekolah/smasmk" class="small-box-footer">
+              <a href="<?BASE_URL;?>/pendidikandetailsekolah/smasmk" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -151,7 +158,7 @@
               <div class="icon">
                 <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="<?=BASE_URL;?>/pendidikankatsekolah/perguruan-tinggi" class="small-box-footer">
+              <a href="<?BASE_URL;?>/pendidikandetailsekolah/perguruan-tinggi" class="small-box-footer">
                 Lihat <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -203,7 +210,7 @@
         <tr class="active">
             <td><?=$no?></td>
             <td><?=$query['npsn'];?></td>
-            <td><a href="<?=BASE_URL;?>/pendidikandetailsekolah/<?=$query['seourl'];?>"><?=$query['namasekolah'];?></a></td>
+            <td><?=$query['namasekolah'];?></td>
             <td><?=$query['alamat'];?></td>
             <td><?=$query['kecamatan'];?></td>
             <td><?=$query['status'];?></td>

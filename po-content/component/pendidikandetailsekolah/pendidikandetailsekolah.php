@@ -15,12 +15,12 @@
 */
 
 /**
- * Router untuk menampilkan request halaman pendidikankatsekolah.
+ * Router untuk menampilkan request halaman pendidikandetailsekolah.
  *
- * Router for display request in pendidikankatsekolah page.
+ * Router for display request in pendidikandetailsekolah page.
  *
 */
-$router->match('GET|POST', '/pendidikankatsekolah', function() use ($core, $templates) {
+$router->match('GET|POST', '/pendidikandetailsekolah', function() use ($core, $templates) {
 	$lang = $core->setlang('home', WEB_LANG);
 	$info = array(
 		'page_title' => 'pendidikandetailsekolah',
@@ -28,7 +28,7 @@ $router->match('GET|POST', '/pendidikankatsekolah', function() use ($core, $temp
 		'page_key' => 'pendidikandetailsekolah wajo',
 		'social_mod' => 'pendidikandetailsekolah',
 		'social_name' => $core->posetting[0]['value'],
-		'social_url' => $core->posetting[1]['value'].'/pendidikankatsekolah',
+		'social_url' => $core->posetting[1]['value'].'/pendidikandetailsekolah',
 		'social_title' => 'pendidikandetailsekolah',
 		'social_desc' => 'pendidikandetailsekolah',
 		'social_img' => $core->posetting[1]['value'].'/'.DIR_INC.'/images/favicon.png',
@@ -38,17 +38,17 @@ $router->match('GET|POST', '/pendidikankatsekolah', function() use ($core, $temp
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('pendidikankatsekolah', compact('lang'));
+	echo $templates->render('pendidikandetailsekolah', compact('lang'));
 });
 
 /**
- * Router untuk menampilkan request halaman pendidikankatsekolah dengan nomor halaman.
+ * Router untuk menampilkan request halaman pendidikandetailsekolah dengan nomor halaman.
  *
- * Router for display request in pendidikankatsekolah page with pagination.
+ * Router for display request in pendidikandetailsekolah page with pagination.
  *
  * $page = integer
 */
-$router->match('GET|POST', '/pendidikankatsekolah/page/(\d+)', function($page) use ($core, $templates) {
+$router->match('GET|POST', '/pendidikandetailsekolah/page/(\d+)', function($page) use ($core, $templates) {
 	$lang = $core->setlang('home', WEB_LANG);
 	$info = array(
 		'page_title' => 'pendidikandetailsekolah',
@@ -56,7 +56,7 @@ $router->match('GET|POST', '/pendidikankatsekolah/page/(\d+)', function($page) u
 		'page_key' => 'pendidikandetailsekolah wajo',
 		'social_mod' => 'pendidikandetailsekolah',
 		'social_name' => $core->posetting[0]['value'],
-		'social_url' => $core->posetting[1]['value'].'/pendidikankatsekolah',
+		'social_url' => $core->posetting[1]['value'].'/pendidikandetailsekolah',
 		'social_title' => 'pendidikandetailsekolah',
 		'social_desc' => 'pendidikandetailsekolah',
 		'social_img' => $core->posetting[1]['value'].'/'.DIR_INC.'/images/favicon.png',
@@ -66,7 +66,7 @@ $router->match('GET|POST', '/pendidikankatsekolah/page/(\d+)', function($page) u
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('pendidikankatsekolah', compact('lang'));
+	echo $templates->render('pendidikandetailsekolah', compact('lang'));
 });
 
 /**
@@ -79,11 +79,11 @@ $router->match('GET|POST', '/pendidikankatsekolah/page/(\d+)', function($page) u
 $router->match('GET|POST', '/pendidikandetailsekolah/([a-z0-9_-]+)', function($seourl) use ($core, $templates) {
 	$alertmsg = '';
 	$lang = $core->setlang('home', WEB_LANG);
-	$pendidikankatsekolah = $core->podb->from('pendidikankatsekolah')
+	$pendidikandetailsekolah = $core->podb->from('pendidikandetailsekolah')
 		->where('seourl', $core->postring->valid($seourl, 'xss'))
 		->limit(1)
 		->fetch();
-	if ($pendidikankatsekolah) {
+	if ($pendidikandetailsekolah) {
 	$info = array(
 		'page_title' => 'pendidikandetailsekolah '.ucfirst($seourl),
 		'page_desc' => 'pendidikandetailsekolah',
@@ -101,7 +101,7 @@ $router->match('GET|POST', '/pendidikandetailsekolah/([a-z0-9_-]+)', function($s
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('pendidikandetailsekolah', compact('pendidikankatsekolah', 'lang'));
+	echo $templates->render('pendidikandetailsekolah', compact('pendidikandetailsekolah', 'lang'));
 	} else {
 		$info = array(
 			'page_title' => 'Request URL Is Not Found',
@@ -132,11 +132,11 @@ $router->match('GET|POST', '/pendidikandetailsekolah/([a-z0-9_-]+)', function($s
 $router->match('GET|POST', '/pendidikandetailsekolah/([a-z0-9_-]+)/page/(\d+)', function($seourl, $page) use ($core, $templates) {
 	$alertmsg = '';
 	$lang = $core->setlang('home', WEB_LANG);
-	$pendidikankatsekolah = $core->podb->from('pendidikankatsekolah')
+	$pendidikandetailsekolah = $core->podb->from('pendidikandetailsekolah')
 		->where('seourl', $core->postring->valid($seourl, 'xss'))
 		->limit(1)
 		->fetch();
-	if ($pendidikankatsekolah) {
+	if ($pendidikandetailsekolah) {
 	$info = array(
 		'page_title' => 'pendidikandetailsekolah '.ucfirst($seourl),
 		'page_desc' => 'pendidikandetailsekolah',
@@ -154,7 +154,7 @@ $router->match('GET|POST', '/pendidikandetailsekolah/([a-z0-9_-]+)/page/(\d+)', 
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('pendidikandetailsekolah', compact('pendidikankatsekolah', 'lang'));
+	echo $templates->render('pendidikandetailsekolah', compact('pendidikandetailsekolah', 'lang'));
 	} else {
 		$info = array(
 			'page_title' => 'Request URL Is Not Found',
