@@ -5,7 +5,7 @@
  *
  * - File : perangkat_daerah.php
  * - Version : 1.0
- * - Author : Rivaldy
+ * - Author : cmink
  * - License : MIT License
  *
  *
@@ -15,12 +15,12 @@
 */
 
 /**
- * Router untuk menampilkan request halaman kategoriperangkat_daerah.
+ * Router untuk menampilkan request halaman katperangkatdaerah.
  *
- * Router for display request in kategoriperangkat_daerah page.
+ * Router for display request in katperangkatdaerah page.
  *
 */
-$router->match('GET|POST', '/kategoriperangkat_daerah', function() use ($core, $templates) {
+$router->match('GET|POST', '/katperangkatdaerah', function() use ($core, $templates) {
 	$lang = $core->setlang('home', WEB_LANG);
 	$info = array(
 		'page_title' => 'perangkat_daerah',
@@ -28,7 +28,7 @@ $router->match('GET|POST', '/kategoriperangkat_daerah', function() use ($core, $
 		'page_key' => 'perangkat_daerah wajo',
 		'social_mod' => 'perangkat_daerah',
 		'social_name' => $core->posetting[0]['value'],
-		'social_url' => $core->posetting[1]['value'].'/kategoriperangkat_daerah',
+		'social_url' => $core->posetting[1]['value'].'/katperangkatdaerah',
 		'social_title' => 'perangkat_daerah',
 		'social_desc' => 'perangkat_daerah',
 		'social_img' => $core->posetting[1]['value'].'/'.DIR_INC.'/images/favicon.png',
@@ -38,17 +38,17 @@ $router->match('GET|POST', '/kategoriperangkat_daerah', function() use ($core, $
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('kategoriperangkat_daerah', compact('lang'));
+	echo $templates->render('katperangkatdaerah', compact('lang'));
 });
 
 /**
- * Router untuk menampilkan request halaman kategoriperangkat_daerah dengan nomor halaman.
+ * Router untuk menampilkan request halaman katperangkatdaerah dengan nomor halaman.
  *
- * Router for display request in kategoriperangkat_daerah page with pagination.
+ * Router for display request in katperangkatdaerah page with pagination.
  *
  * $page = integer
 */
-$router->match('GET|POST', '/kategoriperangkat_daerah/page/(\d+)', function($page) use ($core, $templates) {
+$router->match('GET|POST', '/perangkat_daerah/page/(\d+)', function($page) use ($core, $templates) {
 	$lang = $core->setlang('home', WEB_LANG);
 	$info = array(
 		'page_title' => 'perangkat_daerah',
@@ -56,7 +56,7 @@ $router->match('GET|POST', '/kategoriperangkat_daerah/page/(\d+)', function($pag
 		'page_key' => 'perangkat_daerah wajo',
 		'social_mod' => 'perangkat_daerah',
 		'social_name' => $core->posetting[0]['value'],
-		'social_url' => $core->posetting[1]['value'].'/kategoriperangkat_daerah',
+		'social_url' => $core->posetting[1]['value'].'/katperangkatdaerah',
 		'social_title' => 'perangkat_daerah',
 		'social_desc' => 'perangkat_daerah',
 		'social_img' => $core->posetting[1]['value'].'/'.DIR_INC.'/images/favicon.png',
@@ -66,7 +66,7 @@ $router->match('GET|POST', '/kategoriperangkat_daerah/page/(\d+)', function($pag
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('kategoriperangkat_daerah', compact('lang'));
+	echo $templates->render('perangkat_daerah', compact('lang'));
 });
 
 /**
@@ -79,11 +79,11 @@ $router->match('GET|POST', '/kategoriperangkat_daerah/page/(\d+)', function($pag
 $router->match('GET|POST', '/perangkat_daerah/([a-z0-9_-]+)', function($seourl) use ($core, $templates) {
 	$alertmsg = '';
 	$lang = $core->setlang('home', WEB_LANG);
-	$kategoriperangkat_daerah = $core->podb->from('katperangkatdaerah')
+	$katperangkatdaerah = $core->podb->from('katperangkatdaerah')
 		->where('seourl', $core->postring->valid($seourl, 'xss'))
 		->limit(1)
 		->fetch();
-	if ($kategoriperangkat_daerah) {
+	if ($katperangkatdaerah) {
 	$info = array(
 		'page_title' => 'perangkat_daerah '.ucfirst($seourl),
 		'page_desc' => 'perangkat_daerah',
@@ -101,7 +101,7 @@ $router->match('GET|POST', '/perangkat_daerah/([a-z0-9_-]+)', function($seourl) 
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('perangkat_daerah', compact('kategoriperangkat_daerah', 'lang'));
+	echo $templates->render('perangkat_daerah', compact('katperangkatdaerah', 'lang'));
 	} else {
 		$info = array(
 			'page_title' => 'Request URL Is Not Found',
@@ -132,11 +132,11 @@ $router->match('GET|POST', '/perangkat_daerah/([a-z0-9_-]+)', function($seourl) 
 $router->match('GET|POST', '/perangkat_daerah/([a-z0-9_-]+)/page/(\d+)', function($seourl, $page) use ($core, $templates) {
 	$alertmsg = '';
 	$lang = $core->setlang('home', WEB_LANG);
-	$kategoriperangkat_daerah = $core->podb->from('katperangkatdaerah')
+	$katperangkatdaerah = $core->podb->from('katperangkatdaerah')
 		->where('seourl', $core->postring->valid($seourl, 'xss'))
 		->limit(1)
 		->fetch();
-	if ($kategoriperangkat_daerah) {
+	if ($katperangkatdaerah) {
 	$info = array(
 		'page_title' => 'perangkat_daerah '.ucfirst($seourl),
 		'page_desc' => 'perangkat_daerah',
@@ -154,7 +154,7 @@ $router->match('GET|POST', '/perangkat_daerah/([a-z0-9_-]+)/page/(\d+)', functio
 	$templates->addData(
 		$adddata
 	);
-	echo $templates->render('perangkat_daerah', compact('kategoriperangkat_daerah', 'lang'));
+	echo $templates->render('perangkat_daerah', compact('katperangkatdaerah', 'lang'));
 	} else {
 		$info = array(
 			'page_title' => 'Request URL Is Not Found',

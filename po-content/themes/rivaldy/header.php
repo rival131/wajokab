@@ -39,7 +39,7 @@
 						<div class="baris-2">
 							<div class="contact-item">
 								<svg class="utouch-icon utouch-icon-letter"><use xlink:href="#utouch-icon-letter"></use></svg>
-								<a href="https://mail.samarindakota.go.id" target="_blank">WEBMAIL</a>
+								<a href="#" target="_blank">WEBMAIL</a>
 							</div>
 							<div class="contact-item">
 								<svg class="utouch-icon utouch-icon-telephone-keypad-with-ten-keys"><use xlink:href="#utouch-icon-telephone-keypad-with-ten-keys"></use></svg>
@@ -186,6 +186,9 @@
 												</li>
 												<li>
 													<a href="<?=BASE_URL;?>/perangkat_daerah/kelurahan">Kelurahan</a>
+												</li>
+												<li>
+													<a href="<?=BASE_URL;?>/perangkat_daerah/desa">Desa</a>
 												</li>
 												<li>
 													<a href="<?=BASE_URL;?>/perangkat_daerah/bumd">BUMD</a>
